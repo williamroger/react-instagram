@@ -1,13 +1,228 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html {
+  background-color: #fafafa;
+  font-family: 'Open Sans', sans-serif;
+  color: #050102;
+}
+
+img {
+  display: block;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.header__container,
+.status__container,
+.feed__container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7em 1em;
+}
+
+.header__logo,
+.header__direct {
+  display: block;
+  text-decoration: none !important;
+}
+
+.header__logo img {
+  width: 140px;
+}
+
+.header__direct {
+  background: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.header__direct svg {
+  color: #050102;
+  font-size: 1.3em;
+}
+
+.status {
+  margin-top: 4.2em;
+}
+
+.status__container {
+  padding: 1.2em 1em;
+}
+
+.status__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+.status__item {
+  border-radius: 100%;
+  background-color: transparent;
+  width: 84px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status__item:not(:last-child) {
+  margin-right: 1.5em;
+}
+
+.status__item a {
+  display: block;
+  text-decoration: none !important;
+}
+
+.status__item img {
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 100%;
+}
+
+.status__item--active {
+  background: linear-gradient(45deg, rgba(255, 129, 62, 1), rgba(189,20, 102, 1));
+}
+
+.status__item--active img {
+  border: 2px solid #fafafa;
+}
+
+.feed {
+  padding: 1.2em 1em;
+}
+
+.feed__card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid #e6e6e6;
+  margin-bottom: 2em;
+}
+
+.feed__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: .5em .8em;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.feed__header span {
+  display: flex;
+  align-items: center;
+}
+
+.feed__avatar {
+  display: block;
+  margin-right: 10px;
+}
+
+.feed__avatar img {
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+}
+
+.feed__name {
+  text-decoration: none;
+  color: #050102;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.feed__options {
+  background: no-repeat;
+  border: none;
+  cursor: pointer;
+  color: #050102;
+}
+
+.feed__image img {
+  max-width: 100%;
+}
+
+.feed__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .7em .8em;
+}
+
+.feed__actions span {
+  display: flex;
+}
+
+.feed__actions button {
+  display: block;
+  background: no-repeat;
+  border: none;
+  cursor: pointer;
+  color: #050102;
+}
+
+.feed__actions span button:not(:last-child) {
+  margin-right: 1.7em;
+}
+
+.feed__actions svg {
+  font-size: 1.7em;
+}
+
+.feed__footer {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  padding: .8em;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.feed__footer a {
+  display: block;
+  text-decoration: none;
+}
+
+.feed__footer img {
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.feed__footer p {
+  display: flex;
+  margin: 0;
+  font-size: .8em;
+}
+
+.feed__footer p a {
+  color: #050102;
+  font-weight: 600;
+  margin: 0 5px;
 }
