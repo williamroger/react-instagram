@@ -1,8 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+![](./public/img/print-react-instagram.png)
+
+Desenvolvimento de uma versão web do Instagram durante treinamento React da Codenation, utilizando React e Redux.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn install`
+For installing all dependencies
 
 ### `yarn start`
 
