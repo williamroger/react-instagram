@@ -1,98 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperPlane, faEllipsisH, faHeart, faComment, faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisH, faHeart, faComment, faBookmark } from "@fortawesome/free-solid-svg-icons";
+import Post from './components/Post';
+import Story from './components/Stories';
+import Header from './components/Header';
 
 function App() {
+  const [stories, setStories] = useState([
+    {
+      id: 1,
+      user_thumb: './img/profiles/yoda/yoda-profile.jpg',
+      user_name: 'Yoda',
+      hasNewStory: false,
+    },
+    {
+      id: 2,
+      user_thumb: './img/profiles/gamora/gamora-profile.jpg',
+      user_name: 'Gamora',
+      hasNewStory: true,
+    },
+    {
+      id: 3,
+      user_thumb: './img/profiles/black-panther/black-panther-profile.jpg',
+      user_name: 'T\'Challa',
+      hasNewStory: false,
+    }
+  ]);
+
   return (
     <div>
-      <header className="header">
-        <div className="header__container">
-          <a href="/" className="header__logo">
-            <img src="./img/instagram-logo.svg" alt="Logo Instagram" />
-          </a>
-          <button className="header__direct">
-            <FontAwesomeIcon icon={faPaperPlane} />
-          </button>
-        </div>
-      </header>
+      <Header />
       <section className="status">
         <div className="status__container">
           <ul className="status__list">
-            <li className="status__item">
-              <a href="/">
-                <img
-                  src="./img/profiles/yoda/yoda-profile.jpg"
-                  alt="user-yoda"
-                />
-              </a>
-            </li>
-            <li className="status__item status__item--active">
-              <a href="/">
-                <img
-                  src="./img/profiles/gamora/gamora-profile.jpg"
-                  alt="user-gamora"
-                />
-              </a>
-            </li>
-            <li className="status__item">
-              <a href="/">
-                <img
-                  src="./img/profiles/black-panther/black-panther-profile.jpg"
-                  alt="user-black-panther"
-                />
-              </a>
-            </li>
+            {stories.map(story => <Story story={story} />)}
           </ul>
         </div>
       </section>
+
       <main className="feed">
         <div className="feed__container">
-          <article className="feed__card">
-            <header className="feed__header">
-              <span>
-                <a href="/" className="feed__avatar">
-                  <img
-                    src="./img/profiles/yoda/yoda-profile.jpg"
-                    alt="user-yoda"
-                  />
-                </a>
-                <a href="/" className="feed__name">
-                  Mestre Yoda
-                </a>
-              </span>
-              <button className="feed__options">
-                <FontAwesomeIcon icon={faEllipsisH} />
-              </button>
-            </header>
-            <div className="feed__image">
-              <img src="./img/profiles/yoda/yoda-1.jpg" alt="photo-yoda" />
-            </div>
-            <div className="feed__actions">
-              <span>
-                <button>
-                  <FontAwesomeIcon icon={faHeart} />
-                </button>
-                <button>
-                  <FontAwesomeIcon icon={faComment} />
-                </button>
-              </span>
-              <button>
-                <FontAwesomeIcon icon={faBookmark} />
-              </button>
-            </div>
-            <footer className="feed__footer">
-              <a href="/">
-                <img
-                  src="./img/profiles/domino/domino-profile.jpg"
-                  alt="user-domino"
-                />
-              </a>
-              <p>
-                curtido por <a href="/">Domino</a> e outras{" "}
-                <a href="/">7 pessoas</a>
-              </p>
-            </footer>
-          </article>
+          <Post />
           <article className="feed__card">
             <header className="feed__header">
               <span>
