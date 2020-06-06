@@ -23,7 +23,7 @@ export default function Post({ post = {}, onClickLike }) {
           </a>
         </span>
         <button className="post__options">
-          <i class="fas fa-ellipsis-h"></i>
+          <i className="fas fa-ellipsis-h"></i>
         </button>
       </header>
       <div className="post__image">
@@ -35,11 +35,11 @@ export default function Post({ post = {}, onClickLike }) {
             <i class={`${liked ? "fas" : "far"} fa-heart`}></i>
           </button>
           <button>
-            <i class="far fa-comment"></i>
+            <i className="far fa-comment"></i>
           </button>
         </span>
         <button>
-          <i class="far fa-bookmark"></i>
+          <i className="far fa-bookmark"></i>
         </button>
       </div>
       <footer className="post__footer">

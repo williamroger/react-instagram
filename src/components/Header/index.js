@@ -8,7 +8,7 @@ export default function Header() {
           <img src="./img/instagram-logo.svg" alt="Logo Instagram" />
         </a>
         <button className="header__direct">
-          <i class="far fa-paper-plane"></i>
+          <i className="far fa-paper-plane"></i>
         </button>
       </div>
     </header>
