@@ -1,52 +1,57 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisH, faHeart, faComment, faBookmark } from "@fortawesome/free-solid-svg-icons";
 
-export default function Post() {
+export default function Post({ post = {}, onClickLike }) {
+  const {
+    id,
+    user_thumb,
+    user_name,
+    post_figure,
+    likes_number,
+    show_like,
+    liked,
+  } = post;
+
   return (
-    <article className="feed__card">
-      <header className="feed__header">
+    <article className="post">
+      <header className="post__header">
         <span>
-          <a href="/" className="feed__avatar">
-            <img
-              src="./img/profiles/yoda/yoda-profile.jpg"
-              alt="user-yoda"
-            />
+          <a href={`/${user_name}`} className="post__avatar">
+            <img src={user_thumb} alt={user_name} />
           </a>
-          <a href="/" className="feed__name">
-            Yoda
+          <a href={`/${user_name}`} className="post__name">
+            {user_name}
           </a>
         </span>
-        <button className="feed__options">
-          <FontAwesomeIcon icon={faEllipsisH} />
+        <button className="post__options">
+          <i class="fas fa-ellipsis-h"></i>
         </button>
       </header>
-      <div className="feed__image">
-        <img src="./img/profiles/yoda/yoda-1.jpg" alt="photo-yoda" />
+      <div className="post__image">
+        <img src={post_figure} alt={user_name} />
       </div>
-      <div className="feed__actions">
+      <div className="post__actions">
         <span>
-          <button>
-            <FontAwesomeIcon icon={faHeart} />
+          <button onClick={() => onClickLike(id)}>
+            <i class={`${liked ? "fas" : "far"} fa-heart`}></i>
           </button>
           <button>
-            <FontAwesomeIcon icon={faComment} />
+            <i class="far fa-comment"></i>
           </button>
         </span>
         <button>
-          <FontAwesomeIcon icon={faBookmark} />
+          <i class="far fa-bookmark"></i>
         </button>
       </div>
-      <footer className="feed__footer">
-        <a href="/">
-          <img
-            src="./img/profiles/domino/domino-profile.jpg"
-            alt="user-domino"
-          />
+      <footer className="post__footer">
+        <a href={`/${show_like.user_name}`}>
+          <img src={show_like.user_thumb} alt={show_like.user_name} />
         </a>
         <p>
-          curtido por <a href="/">Domino</a> e outras{" "}
-          <a href="/">7 pessoas</a>
+          curtido por
+          <a href={`/${show_like.user_name}`}>{show_like.user_name}</a>e outras
+          <a href="/">{`${likes_number} ${
+            likes_number > 1 ? "pessoas" : "pessoa"
+          }`}</a>
         </p>
       </footer>
     </article>

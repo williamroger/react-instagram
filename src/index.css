@@ -27,7 +27,7 @@ img {
 
 .header__container,
 .status__container,
-.feed__container {
+.posts__container {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -55,7 +55,7 @@ img {
   cursor: pointer;
 }
 
-.header__direct svg {
+.header__direct i {
   color: #050102;
   font-size: 1.3em;
 }
@@ -110,11 +110,11 @@ img {
   border: 2px solid #fafafa;
 }
 
-.feed {
+.posts {
   padding: 1.2em 1em;
 }
 
-.feed__card {
+.post {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -122,7 +122,7 @@ img {
   margin-bottom: 2em;
 }
 
-.feed__header {
+.post__header {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -133,68 +133,69 @@ img {
   border-top-right-radius: 10px;
 }
 
-.feed__header span {
+.post__header span {
   display: flex;
   align-items: center;
 }
 
-.feed__avatar {
+.post__avatar {
   display: block;
   margin-right: 10px;
 }
 
-.feed__avatar img {
+.post__avatar img {
   border-radius: 100%;
   width: 45px;
   height: 45px;
 }
 
-.feed__name {
+.post__name {
   text-decoration: none;
   color: #050102;
   font-weight: 600;
   font-size: 1em;
 }
 
-.feed__options {
+.post__options {
   background: no-repeat;
   border: none;
   cursor: pointer;
   color: #050102;
 }
 
-.feed__image img {
+.post__image img {
   max-width: 100%;
 }
 
-.feed__actions {
+.post__actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .7em .8em;
 }
 
-.feed__actions span {
+.post__actions span {
   display: flex;
 }
 
-.feed__actions button {
+.post__actions button {
   display: block;
   background: no-repeat;
   border: none;
   cursor: pointer;
   color: #050102;
+  outline: none;
 }
 
-.feed__actions span button:not(:last-child) {
+.post__actions span button:not(:last-child) {
   margin-right: 1.7em;
 }
 
-.feed__actions svg {
-  font-size: 1.7em;
+.post__actions i {
+  font-size: 1.3em;
 }
 
-.feed__footer {
+.post__footer {
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
@@ -203,25 +204,25 @@ img {
   border-bottom-right-radius: 10px;
 }
 
-.feed__footer a {
+.post__footer a {
   display: block;
   text-decoration: none;
 }
 
-.feed__footer img {
+.post__footer img {
   width: 33px;
   height: 33px;
   border-radius: 100%;
   margin-right: 10px;
 }
 
-.feed__footer p {
+.post__footer p {
   display: flex;
   margin: 0;
   font-size: .8em;
 }
 
-.feed__footer p a {
+.post__footer p a {
   color: #050102;
   font-weight: 600;
   margin: 0 5px;
